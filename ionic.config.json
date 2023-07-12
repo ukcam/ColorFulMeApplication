@@ -1,0 +1,7 @@
+{
+  "name": "ColorFulMeApplication",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
