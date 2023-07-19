@@ -11,7 +11,7 @@
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test1"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
@@ -19,7 +19,7 @@
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test2"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
@@ -27,7 +27,7 @@
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test3"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
@@ -35,7 +35,7 @@
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test4"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
@@ -43,7 +43,7 @@
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test5"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
@@ -51,10 +51,28 @@
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test6"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
+    <ion-button (click)="setOpen(true)">Submit</ion-button>
   </p>
   </ion-card>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Result</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Your Score is {{total}}, you Have Color Blind
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
