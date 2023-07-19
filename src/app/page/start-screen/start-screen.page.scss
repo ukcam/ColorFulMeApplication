@@ -1,0 +1,24 @@
+.main-container {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    background-image: url('../../../assets/splash-bg.jpg');
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container1 {
+    background-color: rgba(232, 232, 232, 0.8);
+    display: flow-root;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60vh;
+    width: 80vw;
+    //position: relative;
+}
