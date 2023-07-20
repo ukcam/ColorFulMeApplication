@@ -19,14 +19,14 @@ export class StartScreenPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.form = new CreateUserPageForm(this.formBuilder).createForm()
   }
 
   createUser() {
+    console.log(this.form.value);
     this.router.navigate(['assessment']);
   }
-
 }

@@ -14,7 +14,7 @@ export class CreateUserPageForm {
             password: ['', [Validators.required]],
             firstName: ['', [Validators.required]],
             lastName: ['', [Validators.required]],
-            ageName: ['', [Validators.required]],
+            age: ['', [Validators.required]],
             gender: ['', [Validators.required]],
         });
     }
