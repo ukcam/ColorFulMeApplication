@@ -7,51 +7,107 @@
 
   <ion-card>
   <p align="center">
-    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/colorblindtest-images/1-dark.png" />
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate1.png" />
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test1"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate1"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
-    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/colorblindtest-images/2-dark.png" />
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate2.png" />
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test2"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate2"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
-    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/colorblindtest-images/3-dark.png" />
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate3.png" />
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test3"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate3"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
-    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/colorblindtest-images/4-light.png" />
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate7.png" />
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test4"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate7"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
-    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/colorblindtest-images/5-med.png" />
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate8.png" />
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test5"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate8"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
-    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/colorblindtest-images/6-light.png" />
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate10.png" />
     <ion-card-header>
       <ion-list>
         <ion-item>
-          <ion-textarea placeholder="Enter The Number" [(ngModel)]="test6"></ion-textarea>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate10"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate11.png" />
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate11"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate16.png" />
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate16"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate17.png" />
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate17"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate22.png" />
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate22"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate23.png" />
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate23"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate24.png" />
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate24"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate25.png" />
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate25"></ion-textarea>
         </ion-item>
       </ion-list>
     </ion-card-header>
@@ -70,7 +126,10 @@
       </ion-header>
       <ion-content class="ion-padding">
         <p>
-          Your Score is {{total}}, you Have Color Blind
+          Your total score is {{total}} <br>
+          you have {{redGreen}} points in Red-Green deficiency <br>
+          you have {{deuteran}} points in Deuteranopia or deuteranomaly <br>
+          you have {{protan}} points in Protanopia or protanomaly <br>
         </p>
       </ion-content>
     </ng-template>
