@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
-  background-image: url("../../../assets/splash-bg.jpg");
+  background-image: url("../../../assets/page-bg.jpg");
   display: flex;
   margin: 0;
   padding: 0;
@@ -17,6 +17,7 @@
   background-color: rgba(232, 232, 232, 0.8);
   display: flow-root;
   margin: 0 auto;
+  margin-top: 10px;
   height: 42vh;
   width: 80vw;
   border-radius: 8px;
