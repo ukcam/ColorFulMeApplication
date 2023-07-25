@@ -8,14 +8,28 @@ export const routes: Routes = [
   },
   {
     path: '',
-    loadComponent: () => import('./page/splash-screen/splash-screen.page').then(m => m.SplashScreenPage)
+    loadComponent: () =>
+      import('./page/splash-screen/splash-screen.page').then(
+        (m) => m.SplashScreenPage
+      ),
   },
   {
     path: 'start',
-    loadComponent: () => import('./page/start-screen/start-screen.page').then(m => m.StartScreenPage)
+    loadComponent: () =>
+      import('./page/start-screen/start-screen.page').then(
+        (m) => m.StartScreenPage
+      ),
   },
   {
     path: 'assessment',
-    loadComponent: () => import('./page/assessment-screen/assessment-screen.page').then(m => m.AssessmentScreenPage)
+    loadComponent: () =>
+      import('./page/assessment-screen/assessment-screen.page').then(
+        (m) => m.AssessmentScreenPage
+      ),
+  },
+  {
+    path: 'camera',
+    loadComponent: () =>
+      import('./page/camera/camera.page').then((m) => m.CameraPage),
   },
 ];
