@@ -18,16 +18,18 @@ export class AssessmentScreenPage implements OnInit {
   plate1!: string;
   plate2!: string;
   plate3!: string;
+  plate4!: string;
+  plate5!: string;
+  plate6!: string;
   plate7!: string;
   plate8!: string;
+  plate9!: string;
   plate10!: string;
   plate11!: string;
+  plate12!: string;
+  plate13!: string;
   plate16!: string;
   plate17!: string;
-  plate22!: string;
-  plate23!: string;
-  plate24!: string;
-  plate25!: string;
 
   deuteran = 0
   protan = 0
@@ -52,77 +54,84 @@ export class AssessmentScreenPage implements OnInit {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate3 === "6"){
+    if (this.plate3 === "29"){
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate7 === "3"){
+    if (this.plate4 === "5"){
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate8 === "15"){
+    if (this.plate5 === "3"){
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate10 === "2"){
+    if (this.plate6 === "15"){
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate11 === "6"){
+    if (this.plate7 === "74"){
+      this.total = this.total + 1
+    } else {
+      this.redGreen = this.redGreen + 1
+    }
+    if (this.plate8 === "6"){
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate16 === "16"){
+    if (this.plate9 === "45"){
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate17 === "73"){
+    if (this.plate10 === "5"){
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate22 === "26"){
+    if (this.plate11 === "7"){
       this.total = this.total + 1
-    } else if (this.plate22 === "6") {
+    } else {
+      this.redGreen = this.redGreen + 1
+    }
+
+    if (this.plate12 === "16"){
+      this.total = this.total + 1
+    } else {
+      this.redGreen = this.redGreen + 1
+    }
+
+    if (this.plate13 === "73"){
+      this.total = this.total + 1
+    } else {
+      this.redGreen = this.redGreen + 1
+    }
+
+    if (this.plate16 === "26"){
+      this.total = this.total + 1
+    } else if (this.plate10 === "6") {
       this.protan = this.protan + 1
-    } else if (this.plate22 === "2") {
+    } else if (this.plate10 === "2") {
       this.deuteran = this.deuteran + 1
     }
 
-    if (this.plate23 === "42"){
+    if (this.plate17 === "42"){
       this.total = this.total + 1
-    } else if (this.plate22 === "2") {
+    } else if (this.plate11 === "2") {
       this.protan = this.protan + 1
-    } else if (this.plate22 === "4") {
-      this.deuteran = this.deuteran + 1
-    }
-
-    if (this.plate24 === "35"){
-      this.total = this.total + 1
-    } else if (this.plate22 === "5") {
-      this.protan = this.protan + 1
-    } else if (this.plate22 === "3") {
-      this.deuteran = this.deuteran + 1
-    }
-
-    if (this.plate25 === "96"){
-      this.total = this.total + 1
-    } else if (this.plate22 === "6") {
-      this.protan = this.protan + 1
-    } else if (this.plate22 === "9") {
+    } else if (this.plate11 === "4") {
       this.deuteran = this.deuteran + 1
     }
 
