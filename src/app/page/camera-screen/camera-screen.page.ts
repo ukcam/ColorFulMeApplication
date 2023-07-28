@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { PhotoService } from 'src/app/services/photo.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-camera-screen',
@@ -13,9 +14,20 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class CameraScreenPage implements OnInit {
 
-  constructor(public photoService: PhotoService) { }
+  classValue = "imageNormal"
+  //classValue = "imageProtanopia"
+  //classValue = "imageTritanopia"
+  //classValue = "imageDeuteranopia"
+
+
+  constructor(
+    public photoService: PhotoService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit() {
+    this.classValue = this.route.snapshot.params['condition']
+
   }
 
   addPhotoToGallery() {

@@ -37,6 +37,8 @@ export class AssessmentScreenPage implements OnInit {
   total = 0
   isModalOpen = false;
 
+  condition = ""
+
   resultString = ""
 
   constructor(private router: Router) { }
@@ -135,6 +137,8 @@ export class AssessmentScreenPage implements OnInit {
       this.deuteran = this.deuteran + 1
     }
 
+    this.condition = "imageTritanopia"
+
   }
 
   setOpen(isOpen: boolean) {
@@ -143,5 +147,10 @@ export class AssessmentScreenPage implements OnInit {
     if(!isOpen){
       this.total = 0
     }
+  }
+
+  openCam() {
+    this.isModalOpen = false
+    this.router.navigate(['camera', this.condition]);
   }
 }
