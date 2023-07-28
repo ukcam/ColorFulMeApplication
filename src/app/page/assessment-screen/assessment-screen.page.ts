@@ -38,6 +38,9 @@ export class AssessmentScreenPage implements OnInit {
   isModalOpen = false;
 
   resultString = ""
+  redGreenMessage = ""
+  deuteranMessage = ""
+  protanMessage = ""
 
   constructor(private router: Router) { }
 
@@ -135,6 +138,17 @@ export class AssessmentScreenPage implements OnInit {
       this.deuteran = this.deuteran + 1
     }
 
+    if (this.redGreen > 0) {
+      this.redGreenMessage = "You are part of the 5–8% of males and 0.5–1% of females globally that has red-green deficiency"
+    }
+
+    if (this.protan > 0) {
+      this.protanMessage = "You are part of the 1% of males and 0.1% of females globally that has Protanopia"
+    }
+
+    if (this.deuteran > 0) {
+      this.deuteranMessage = "You are part of the 1% of males and 0.35% of females globally that has Deuteranopia"
+    }
   }
 
   setOpen(isOpen: boolean) {
