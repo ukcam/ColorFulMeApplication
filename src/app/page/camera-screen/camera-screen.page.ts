@@ -15,9 +15,6 @@ import { ActivatedRoute } from '@angular/router';
 export class CameraScreenPage implements OnInit {
 
   classValue = "imageNormal"
-  //classValue = "imageProtanopia"
-  //classValue = "imageTritanopia"
-  //classValue = "imageDeuteranopia"
 
 
   constructor(

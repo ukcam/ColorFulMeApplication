@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonInput, IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { PhotoService } from 'src/app/services/photo.service';
 
 
 @Component({
@@ -37,11 +38,18 @@ export class AssessmentScreenPage implements OnInit {
   total = 0
   isModalOpen = false;
 
+  redGreenMessage = ""
+  deuteranMessage = ""
+  protanMessage = ""
+
   condition = ""
 
   resultString = ""
 
-  constructor(private router: Router) { }
+  constructor(
+    public photoService: PhotoService,
+    private router: Router
+    ) { }
 
   ngOnInit() { }
 
@@ -137,7 +145,27 @@ export class AssessmentScreenPage implements OnInit {
       this.deuteran = this.deuteran + 1
     }
 
-    this.condition = "imageTritanopia"
+    if (this.redGreen > 0) {
+      this.redGreenMessage = "You are part of the 5–8% of males and 0.5–1% of females globally that has red-green deficiency"
+    }
+
+    if (this.protan > 0) {
+      this.protanMessage = "You are part of the 1% of males and 0.1% of females globally that has Protanopia"
+    }
+
+    if (this.deuteran > 0) {
+      this.deuteranMessage = "You are part of the 1% of males and 0.35% of females globally that has Deuteranopia"
+    }
+
+    if (this.deuteran > this.protan) {
+      this.condition = "imageDeuteranopia"
+    } else if (this.deuteran < this.protan) {
+      this.condition = "imageProtanopia"
+    } else if (this.redGreen !== 0) {
+      this.condition = "imageRedGreen"
+    } else {
+      this.condition = "imageNormal"
+    }
 
   }
 
@@ -151,6 +179,7 @@ export class AssessmentScreenPage implements OnInit {
 
   openCam() {
     this.isModalOpen = false
+    this.photoService.addNewToGallery();
     this.router.navigate(['camera', this.condition]);
   }
 }

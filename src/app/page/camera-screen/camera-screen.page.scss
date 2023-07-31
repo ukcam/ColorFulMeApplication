@@ -4,6 +4,7 @@
 
 .imageProtanopia {
   filter: hue-rotate(10deg);
+  filter: saturate(4)
 }
 
 .imageTritanopia {
@@ -12,4 +13,9 @@
 
 .imageDeuteranopia {
   filter: contrast(200%);
+  filter: saturate(4)
+}
+
+.imageRedGreen {
+  filter: saturate(4)
 }

@@ -144,9 +144,9 @@
         <ion-content class="ion-padding">
           <p>
             Your total score is {{total}} <br>
-            you have {{redGreen}} points in Red-Green deficiency <br>
-            you have {{deuteran}} points in Deuteranopia or deuteranomaly <br>
-            you have {{protan}} points in Protanopia or protanomaly <br>
+            {{redGreenMessage}}<br>
+            {{deuteranMessage}}<br>
+            {{protanMessage}}<br>
           </p>
           <ion-button (click)="openCam()">Open Camera</ion-button>
         </ion-content>
