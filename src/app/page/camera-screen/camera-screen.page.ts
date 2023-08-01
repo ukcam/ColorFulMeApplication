@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ActionSheetController } from '@ionic/angular';
-import { PhotoService, UserPhoto } from 'src/app/services/photo.service';
+import { PhotoService } from 'src/app/services/photo.service';
 import { ActivatedRoute } from '@angular/router';
+import { CapturedPhoto } from 'src/app/services/interfaces/user-photo.interface';
 
 @Component({
   selector: 'app-camera-screen',
@@ -27,7 +28,7 @@ export class CameraScreenPage implements OnInit {
     await this.photoService.loadSaved();
   }
 
-  public async showActionSheet(photo: UserPhoto, position: number) {
+  public async showActionSheet(photo: CapturedPhoto, position: number) {
     const actionSheet = await this.actionSheetController.create({
       header: 'Photos',
       buttons: [{

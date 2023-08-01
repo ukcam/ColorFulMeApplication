@@ -4,6 +4,7 @@ import { Capacitor } from '@capacitor/core';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Platform } from '@ionic/angular';
+import { CapturedPhoto } from './interfaces/user-photo.interface';
 
 
 
@@ -11,7 +12,7 @@ import { Platform } from '@ionic/angular';
   providedIn: 'root',
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
+  public photos: CapturedPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
 
   constructor(private platform: Platform) { }
@@ -82,7 +83,7 @@ export class PhotoService {
     }
   }
 
-  public async deletePicture(photo: UserPhoto, position: number) {
+  public async deletePicture(photo: CapturedPhoto, position: number) {
     this.photos.splice(position, 1);
     Preferences.set({
       key: this.PHOTO_STORAGE,
@@ -105,9 +106,4 @@ export class PhotoService {
       };
       reader.readAsDataURL(blob);
     });
-}
-
-export interface UserPhoto {
-  filepath: string;
-  webviewPath: string | undefined;
 }
