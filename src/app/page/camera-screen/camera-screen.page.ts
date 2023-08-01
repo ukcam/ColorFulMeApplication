@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { PhotoService } from 'src/app/services/photo.service';
+import { IonicModule, ActionSheetController } from '@ionic/angular';
+import { PhotoService, UserPhoto } from 'src/app/services/photo.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,21 +14,37 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CameraScreenPage implements OnInit {
 
-  classValue = "imageNormal"
-
+  classValue = "imageNormal";
 
   constructor(
     public photoService: PhotoService,
+    public actionSheetController: ActionSheetController,
     private route: ActivatedRoute
-    ) { }
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.classValue = this.route.snapshot.params['condition']
-
+    await this.photoService.loadSaved();
   }
 
-  addPhotoToGallery() {
-    this.photoService.addNewToGallery();
+  public async showActionSheet(photo: UserPhoto, position: number) {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Photos',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          this.photoService.deletePicture(photo, position);
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => { }
+      }]
+    });
+    await actionSheet.present();
   }
 
 }
