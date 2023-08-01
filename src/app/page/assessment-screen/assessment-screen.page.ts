@@ -38,10 +38,6 @@ export class AssessmentScreenPage implements OnInit {
   total = 0
   isModalOpen = false;
 
-  redGreenMessage = ""
-  deuteranMessage = ""
-  protanMessage = ""
-
   condition = ""
 
   resultString = ""
@@ -56,6 +52,8 @@ export class AssessmentScreenPage implements OnInit {
   getScore() {
     if (this.plate1 === "12"){
       this.total = this.total + 1
+    } else {
+      this.redGreen = this.redGreen + 1
     }
 
     if (this.plate2 === "8"){
@@ -131,39 +129,34 @@ export class AssessmentScreenPage implements OnInit {
 
     if (this.plate16 === "26"){
       this.total = this.total + 1
-    } else if (this.plate10 === "6") {
+    } else if (this.plate16 === "6") {
       this.protan = this.protan + 1
-    } else if (this.plate10 === "2") {
+    } else if (this.plate16 === "2") {
       this.deuteran = this.deuteran + 1
     }
 
     if (this.plate17 === "42"){
       this.total = this.total + 1
-    } else if (this.plate11 === "2") {
+    } else if (this.plate17 === "2") {
       this.protan = this.protan + 1
-    } else if (this.plate11 === "4") {
+    } else if (this.plate17 === "4") {
       this.deuteran = this.deuteran + 1
     }
 
-    if (this.redGreen > 0) {
-      this.redGreenMessage = "You are part of the 5–8% of males and 0.5–1% of females globally that has red-green deficiency"
-    }
-
-    if (this.protan > 0) {
-      this.protanMessage = "You are part of the 1% of males and 0.1% of females globally that has Protanopia"
-    }
-
-    if (this.deuteran > 0) {
-      this.deuteranMessage = "You are part of the 1% of males and 0.35% of females globally that has Deuteranopia"
-    }
-
-    if (this.deuteran > this.protan) {
-      this.condition = "imageDeuteranopia"
-    } else if (this.deuteran < this.protan) {
+    if (this.redGreen == 13 && this.protan == 0 && this.deuteran == 0) {
+      this.resultString = "You have a rare case of achromatopsia, you should see a doctor and get your eyes checked"
+      this.condition = "imageNormal"
+    } else if (this.protan > 0 && this.redGreen > 0) {
+      this.resultString = "You are part of the 1% of males and 0.1% of females globally that has Protanopia"
       this.condition = "imageProtanopia"
-    } else if (this.redGreen !== 0) {
+    } else if (this.deuteran > 0 && this.redGreen > 0) {
+      this.resultString = "You are part of the 1% of males and 0.35% of females globally that has Deuteranopia"
+      this.condition = "imageDeuteranopia"
+    } else if (this.redGreen > 0) {
+      this.resultString = "You are part of the 5–8% of males and 0.5–1% of females globally that has red-green deficiency"
       this.condition = "imageRedGreen"
     } else {
+      this.resultString = "You don't have any colorblind condition"
       this.condition = "imageNormal"
     }
 
@@ -174,6 +167,9 @@ export class AssessmentScreenPage implements OnInit {
     this.getScore()
     if(!isOpen){
       this.total = 0
+      this.deuteran = 0 
+      this.protan = 0
+      this.redGreen = 0
     }
   }
 
