@@ -5,6 +5,7 @@ import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Platform } from '@ionic/angular';
 import { CapturedPhoto } from './interfaces/user-photo.interface';
+import { Router } from '@angular/router';
 
 
 
@@ -15,8 +16,9 @@ import { CapturedPhoto } from './interfaces/user-photo.interface';
 export class PhotoService {
   public photos: CapturedPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
+  checkBoxed = "true"
 
-  constructor(private platform: Platform, private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private platform: Platform, private el: ElementRef, private renderer: Renderer2, private router: Router) { }
 
   public async loadSaved() {
     const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
@@ -110,16 +112,31 @@ export class PhotoService {
       };
       reader.readAsDataURL(blob);
     });
+  
+  originalUrl = this.router.url
+  newOriginalUrl = this.originalUrl.replace("/camera/", "")
 
-  public async loadpictures(event: any) {
-    if (event.detail.checked) {
-      this.renderer.removeClass(this.el, '.imageNormal');
+  public async loadpictures(value: string) {
+    /*if (isTrue) {
+      console.log(this.newOriginalUrl)
+      this.checkBoxed = "true"
+      this.router.navigate(['camera', this.newOriginalUrl]);
+      /*this.renderer.removeClass(this.el, '.imageNormal');
       this.renderer.removeClass(this.el, '.imageProtanopia');
       this.renderer.removeClass(this.el, '.imageTritanopia');
       this.renderer.removeClass(this.el, '.imageDeuteranopia');
       this.renderer.addClass(this.el, '.imageNormal');
     } else {
-      this.loadSaved();
+      //this.loadSaved();
+      this.checkBoxed = "false"
+      this.router.navigate(['camera', 'imageNormal']);
+    }*/
+    switch (value){
+      case 'imageNormal': this.router.navigate(['camera', 'imageNormal']); break
+      case 'imageProtanopia': this.router.navigate(['camera', 'imageProtanopia']); break
+      case 'imageRedGreen': this.router.navigate(['camera', 'imageRedGreen']); break
+      case 'imageDeuteranopia': this.router.navigate(['camera', 'imageDeuteranopia']); break
+      default: this.router.navigate(['camera', 'imageNormal']); break
     }
   }
 }

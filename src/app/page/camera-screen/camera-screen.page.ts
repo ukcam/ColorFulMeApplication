@@ -16,6 +16,7 @@ import { CapturedPhoto } from 'src/app/services/interfaces/user-photo.interface'
 export class CameraScreenPage implements OnInit {
 
   classValue = "imageNormal";
+  currentFilter = ""
 
   constructor(
     public photoService: PhotoService,
@@ -26,6 +27,13 @@ export class CameraScreenPage implements OnInit {
 
   async ngOnInit() {
     this.classValue = this.route.snapshot.params['condition']
+    switch (this.classValue) {
+      case 'imageNormal' : this.currentFilter = "Normal"; break;
+      case 'imageRedGreen' : this.currentFilter = "Red Green"; break;
+      case 'imageDeuteranopia' : this.currentFilter = "Deuteranopia"; break;
+      case 'imageProtanopia' : this.currentFilter = "Protanopia"; break;
+      default: this.currentFilter = "Normal"; break;
+    }
     await this.photoService.loadSaved();
   }
 
@@ -51,5 +59,34 @@ export class CameraScreenPage implements OnInit {
 
   openAssessment() {
     this.router.navigate(['assessment', this.classValue]);
+  }
+
+  public async showActionSheetFilter() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Filters',
+      buttons: [{
+        text: 'Normal',
+        handler: () => {
+          this.photoService.loadpictures('imageNormal');
+        }
+      }, {
+        text: 'Red Green',
+        handler: () => {
+          this.photoService.loadpictures('imageRedGreen');
+        }
+      }, {
+        text: 'Deuteranopia',
+        handler: () => {
+          this.photoService.loadpictures('imageDeuteranopia');
+        }
+      },
+      {
+        text: 'Protanopia',
+        handler: () => {
+          this.photoService.loadpictures('imageProtanopia');
+        }
+      }]
+    });
+    await actionSheet.present();
   }
 }

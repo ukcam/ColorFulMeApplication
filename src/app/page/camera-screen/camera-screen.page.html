@@ -18,12 +18,14 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title size="small">Gallery</ion-title>
-      <ion-toggle slot="end" [enableOnOffLabels]="true" [checked]="false"
-        (ionChange)="photoService.loadpictures($event)">Filters</ion-toggle>
+      <ion-title size="Medium">Gallery</ion-title>
+      <!--ion-toggle slot="end" [enableOnOffLabels]="true" [checked]="photoService.checkBoxed"
+        (ionChange)="photoService.loadpictures($event)">Filters</ion-toggle-->
+      <ion-button id="open-action-sheet" size="small" slot="end" (click)="showActionSheetFilter()">Filters</ion-button>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
+    <ion-text>{{currentFilter}}</ion-text>
     <!-- content here -->
     <ion-grid>
       <ion-row>
@@ -40,6 +42,10 @@
   </ion-content>
 
   <ion-footer>
+    <!--ion-button (click)="photoService.loadpictures('imageNormal')">Normal</ion-button>
+    <ion-button (click)="photoService.loadpictures('imageRedGreen')">RedGreen</ion-button>
+    <ion-button (click)="photoService.loadpictures('imageDeuteranopia')">Deuteranopia</ion-button>
+    <ion-button (click)="photoService.loadpictures('imageProtanopia')">Protanopia</ion-button-->
     <ion-toolbar>
       <ion-title size="small">ColorFulMe App | Team Sentinel - Hackaton © 2023</ion-title>
     </ion-toolbar>
