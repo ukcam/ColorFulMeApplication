@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ActionSheetController } from '@ionic/angular';
 import { PhotoService } from 'src/app/services/photo.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CapturedPhoto } from 'src/app/services/interfaces/user-photo.interface';
 
 @Component({
@@ -20,7 +20,8 @@ export class CameraScreenPage implements OnInit {
   constructor(
     public photoService: PhotoService,
     public actionSheetController: ActionSheetController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   async ngOnInit() {
@@ -46,5 +47,9 @@ export class CameraScreenPage implements OnInit {
       }]
     });
     await actionSheet.present();
+  }
+
+  openAssessment() {
+    this.router.navigate(['assessment', this.classValue]);
   }
 }
