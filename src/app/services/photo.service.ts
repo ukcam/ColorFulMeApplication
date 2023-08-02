@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Directive, ElementRef, Injectable, Renderer2 } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Capacitor } from '@capacitor/core';
 import { Directory, Filesystem } from '@capacitor/filesystem';
@@ -11,11 +11,12 @@ import { CapturedPhoto } from './interfaces/user-photo.interface';
 @Injectable({
   providedIn: 'root',
 })
+@Directive({ 'selector': '.camera-video' })
 export class PhotoService {
   public photos: CapturedPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
 
-  constructor(private platform: Platform) { }
+  constructor(private platform: Platform, private el: ElementRef, private renderer: Renderer2) { }
 
   public async loadSaved() {
     const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
@@ -31,14 +32,16 @@ export class PhotoService {
     }
   }
 
-  public async addNewToGallery() {
+  public async addNewToGallery(filter: any) {
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
+      allowEditing: true
     });
+    this.renderer.addClass(this.el.nativeElement, '.' + filter);
 
-    const savedImageFile = await this.savePicture(capturedPhoto);
+    const savedImageFile = await this.savePicture(capturedPhoto, filter);
     this.photos.unshift(savedImageFile);
 
     Preferences.set({
@@ -47,7 +50,7 @@ export class PhotoService {
     });
   }
 
-  private async savePicture(photo: Photo) {
+  private async savePicture(photo: Photo, filter?: any) {
     const base64Data = await this.readAsBase64(photo);
 
     const fileName = new Date().getTime() + '.jpeg';
@@ -61,11 +64,13 @@ export class PhotoService {
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+        filter
       };
     } else {
       return {
         filepath: fileName,
         webviewPath: photo.webPath,
+        filter
       };
     }
   }

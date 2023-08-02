@@ -1,62 +1,42 @@
 <ion-content [fullscreen]="true" scroll-y="false">
-  <div class="main-container">
+  <ion-card class="main-container">
     <form [formGroup]="form" class="container1">
       <ion-item>
         <ion-label position="floating">Email Address</ion-label>
-        <ion-input
-          type="email"
-          required="true"
-          formControlName="email"
-        ></ion-input>
+        <ion-input type="email" required="true" formControlName="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Username</ion-label>
-        <ion-input
-          type="email"
-          required="true"
-          formControlName="username"
-        ></ion-input>
+        <ion-input type="email" required="true" formControlName="username"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input
-          type="password"
-          required="true"
-          formControlName="password"
-        ></ion-input>
+        <ion-input type="password" required="true" formControlName="password"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">First Name</ion-label>
-        <ion-input
-          type="string"
-          required="true"
-          formControlName="firstName"
-        ></ion-input>
+        <ion-input type="string" required="true" formControlName="firstName"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Last Name</ion-label>
-        <ion-input
-          type="string"
-          required="true"
-          formControlName="lastName"
-        ></ion-input>
+        <ion-input type="string" required="true" formControlName="lastName"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Age</ion-label>
-        <ion-input
-          type="number"
-          required="true"
-          formControlName="age"
-        ></ion-input>
+        <ion-input type="number" required="true" formControlName="age"></ion-input>
       </ion-item>
-      <ion-button color="success" size="full" (click)="createUser()"
-        >Next</ion-button
-      >
+      <ion-button color="success" size="full" (click)="createUser()">Next</ion-button>
     </form>
-  </div>
+  </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>ColorFulMe App | Team Sentinel - Hackaton © 2023</ion-title>
+  </ion-toolbar>
+</ion-footer>

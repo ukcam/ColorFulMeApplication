@@ -48,4 +48,8 @@ export class CameraScreenPage implements OnInit {
     await actionSheet.present();
   }
 
+  setFilterToggle() {
+
+  }
+
 }
