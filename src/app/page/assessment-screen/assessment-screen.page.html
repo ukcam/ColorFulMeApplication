@@ -24,7 +24,17 @@
   <ion-content class="ion-padding">
     <ion-card>
       <p align="center">
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate1.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/{{imageContainer[x]}}.png" />
+        <ion-card-header>
+          <ion-list>
+            <ion-item>
+              <ion-textarea placeholder="Enter The Number" [(ngModel)]=imageContainerModel[x]></ion-textarea>
+            </ion-item>
+            <ion-button [disabled]="x === 0? true : false" (click)="prevImage()">Previous</ion-button>
+            <ion-button (click)="nextImage()">Submit</ion-button>
+          </ion-list>
+        </ion-card-header>
+        <!--<img height="200 px" width="200 px" src="/assets/ishihara-images/plate1.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -32,7 +42,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate2.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate2.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -40,7 +50,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate3.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate3.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -48,7 +58,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate4.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate4.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -56,7 +66,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate5.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate5.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -64,7 +74,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate6.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate6.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -72,7 +82,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate7.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate7.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -80,7 +90,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate8.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate8.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -88,7 +98,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate9.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate9.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -96,7 +106,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate10.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate10.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -104,7 +114,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate11.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate11.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -112,7 +122,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate12.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate12.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -120,7 +130,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate13.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate13.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -128,7 +138,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate16.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate16.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
@@ -136,15 +146,15 @@
             </ion-item>
           </ion-list>
         </ion-card-header>
-        <img alt="Silhouette of mountains" height="200 px" width="200 px" src="/assets/ishihara-images/plate17.png" />
+        <img height="200 px" width="200 px" src="/assets/ishihara-images/plate17.png" />
         <ion-card-header>
           <ion-list>
             <ion-item>
               <ion-textarea placeholder="Enter The Number" [(ngModel)]="plate17"></ion-textarea>
             </ion-item>
           </ion-list>
-        </ion-card-header>
-        <ion-button (click)="setOpen(true)">Submit</ion-button>
+        </ion-card-header>-->
+        <ion-button (click)="setOpen(true)">Asses</ion-button>
       </p>
     </ion-card>
     <ion-modal [isOpen]="isModalOpen">
@@ -159,7 +169,6 @@
         </ion-header>
         <ion-content class="ion-padding">
           <p>
-            Your total score is {{total}} <br>
             {{resultString }}<br>
           </p>
           <ion-button (click)="openCam()">Open Camera</ion-button>

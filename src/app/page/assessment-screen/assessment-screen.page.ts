@@ -42,104 +42,142 @@ export class AssessmentScreenPage implements OnInit {
 
   resultString = ""
 
+  imageContainer = [
+    "plate1",
+    "plate2",
+    "plate3",
+    "plate4",
+    "plate5",
+    "plate6",
+    "plate7",
+    "plate8",
+    "plate9",
+    "plate10",
+    "plate11",
+    "plate12",
+    "plate13",
+    "plate16",
+    "plate17",
+  ]
+  
+  x = 0
+
+  imageContainerModel = [
+    this.plate1,
+    this.plate2,
+    this.plate3,
+    this.plate4,
+    this.plate5,
+    this.plate6,
+    this.plate7,
+    this.plate8,
+    this.plate9,
+    this.plate10,
+    this.plate11,
+    this.plate12,
+    this.plate13,
+    this.plate16,
+    this.plate17,
+  ]
+
   constructor(
     public photoService: PhotoService,
     private router: Router
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   getScore() {
-    if (this.plate1 === "12") {
+    if (this.imageContainerModel[0] === "12") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate2 === "8") {
+    if (this.imageContainerModel[1] === "8") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate3 === "29") {
+    if (this.imageContainerModel[2] === "29") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate4 === "5") {
+    if (this.imageContainerModel[3] === "5") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate5 === "3") {
+    if (this.imageContainerModel[4] === "3") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate6 === "15") {
+    if (this.imageContainerModel[5] === "15") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate7 === "74") {
+    if (this.imageContainerModel[6] === "74") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
-    if (this.plate8 === "6") {
-      this.total = this.total + 1
-    } else {
-      this.redGreen = this.redGreen + 1
-    }
-
-    if (this.plate9 === "45") {
+    if (this.imageContainerModel[7] === "6") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate10 === "5") {
+    if (this.imageContainerModel[8] === "45") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate11 === "7") {
+    if (this.imageContainerModel[9] === "5") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate12 === "16") {
+    if (this.imageContainerModel[10] === "7") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate13 === "73") {
+    if (this.imageContainerModel[11] === "16") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.plate16 === "26") {
+    if (this.imageContainerModel[12] === "73") {
       this.total = this.total + 1
-    } else if (this.plate16 === "6") {
+    } else {
+      this.redGreen = this.redGreen + 1
+    }
+
+    if (this.imageContainerModel[13] === "26") {
+      this.total = this.total + 1
+    } else if (this.imageContainerModel[13] === "6") {
       this.protan = this.protan + 1
-    } else if (this.plate16 === "2") {
+    } else if (this.imageContainerModel[13] === "2") {
       this.deuteran = this.deuteran + 1
     }
 
-    if (this.plate17 === "42") {
+    if (this.imageContainerModel[14] === "42") {
       this.total = this.total + 1
-    } else if (this.plate17 === "2") {
+    } else if (this.imageContainerModel[14] === "2") {
       this.protan = this.protan + 1
-    } else if (this.plate17 === "4") {
+    } else if (this.imageContainerModel[14] === "4") {
       this.deuteran = this.deuteran + 1
     }
 
@@ -177,5 +215,18 @@ export class AssessmentScreenPage implements OnInit {
     this.isModalOpen = false
     this.photoService.addNewToGallery(this.condition);
     this.router.navigate(['camera', this.condition]);
+  }
+
+
+  nextImage() {
+    if (this.x < 14 ){
+      this.x++
+    }
+  }
+
+  prevImage(){
+    if (this.x !== 0 ){
+      this.x--
+   }
   }
 }
