@@ -59,7 +59,7 @@ export class AssessmentScreenPage implements OnInit {
     "plate16",
     "plate17",
   ]
-  
+
   x = 0
 
   imageContainerModel = [
@@ -85,7 +85,7 @@ export class AssessmentScreenPage implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   getScore() {
     if (this.imageContainerModel[0] === "12") {
@@ -205,7 +205,7 @@ export class AssessmentScreenPage implements OnInit {
     this.getScore()
     if (!isOpen) {
       this.total = 0
-      this.deuteran = 0 
+      this.deuteran = 0
       this.protan = 0
       this.redGreen = 0
     }
@@ -217,16 +217,19 @@ export class AssessmentScreenPage implements OnInit {
     this.router.navigate(['camera', this.condition]);
   }
 
+  openGallery() {
+    this.router.navigate(['camera', this.condition]);
+  }
 
   nextImage() {
-    if (this.x < 14 ){
+    if (this.x < 14) {
       this.x++
     }
   }
 
-  prevImage(){
-    if (this.x !== 0 ){
+  prevImage() {
+    if (this.x !== 0) {
       this.x--
-   }
+    }
   }
 }
