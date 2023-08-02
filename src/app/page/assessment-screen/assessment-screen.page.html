@@ -24,6 +24,9 @@
   <ion-content class="ion-padding">
     <ion-card>
       <p align="center">
+        <ion-text>
+          <h3>{{x+1}} of 15</h3>
+        </ion-text>
         <img height="200 px" width="200 px" src="/assets/ishihara-images/{{imageContainer[x]}}.png" />
         <ion-card-header>
           <ion-list>
@@ -154,7 +157,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>-->
-        <ion-button (click)="setOpen(true)">Assess</ion-button>
+        <ion-button  [disabled]="x === 14? false : true" (click)="setOpen(true)">Assess</ion-button>
       </p>
     </ion-card>
     <ion-modal [isOpen]="isModalOpen">
