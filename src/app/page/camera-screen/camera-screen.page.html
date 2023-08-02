@@ -19,7 +19,8 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title size="small">Gallery</ion-title>
-      <ion-toggle slot="end" [enableOnOffLabels]="true" [checked]="false">Filters</ion-toggle>
+      <ion-toggle slot="end" [enableOnOffLabels]="true" [checked]="false"
+        (ionChange)="photoService.loadpictures($event)">Filters</ion-toggle>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">

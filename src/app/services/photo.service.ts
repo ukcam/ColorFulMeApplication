@@ -11,7 +11,7 @@ import { CapturedPhoto } from './interfaces/user-photo.interface';
 @Injectable({
   providedIn: 'root',
 })
-@Directive({ 'selector': '.camera-video' })
+@Directive({ 'selector': 'ion-img' })
 export class PhotoService {
   public photos: CapturedPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
@@ -39,7 +39,6 @@ export class PhotoService {
       quality: 100,
       allowEditing: true
     });
-    this.renderer.addClass(this.el.nativeElement, '.' + filter);
 
     const savedImageFile = await this.savePicture(capturedPhoto, filter);
     this.photos.unshift(savedImageFile);
@@ -111,4 +110,16 @@ export class PhotoService {
       };
       reader.readAsDataURL(blob);
     });
+
+  public async loadpictures(event: any) {
+    if (event.detail.checked) {
+      this.renderer.removeClass(this.el, '.imageNormal');
+      this.renderer.removeClass(this.el, '.imageProtanopia');
+      this.renderer.removeClass(this.el, '.imageTritanopia');
+      this.renderer.removeClass(this.el, '.imageDeuteranopia');
+      this.renderer.addClass(this.el, '.imageNormal');
+    } else {
+      this.loadSaved();
+    }
+  }
 }
