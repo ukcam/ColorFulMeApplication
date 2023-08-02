@@ -25,6 +25,10 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-.hydrated {
-  filter: saturate(2) hue-rotate(10deg) !important; //Must be dynamic value
+pwa-camera-modal,
+pwa-action-sheet,
+pwa-toast,
+pwa-camera,
+pwa-camera-modal-instance {
+  filter: hue-rotate(10deg) saturate(4) !important; //Must be dynamic value
 }
