@@ -45,25 +45,25 @@ export class PhotoService {
   }
 
   public async addNewToGallery(filter: any) {
-    let filterColor: any;
+    let filterColor: any = 'hue-rotate(0)';
     switch (filter) {
       case 'imageNormal':
-        filterColor: 'hue-rotate(0)';
+        filterColor = 'hue-rotate(0)';
         break;
       case 'imageProtanopia':
-        filterColor: 'hue-rotate(10deg)';
+        filterColor = 'hue-rotate(10deg)';
         break;
       case 'imageTritanopia':
-        filterColor: 'hue-rotate(90deg)';
+        filterColor = 'hue-rotate(90deg)';
         break;
       case 'imageDeuteranopia':
-        filterColor: 'contrast(200%)';
+        filterColor = 'contrast(200%)';
         break;
       case 'imageRedGreen':
-        filterColor: 'saturate(4)';
+        filterColor = 'saturate(4)';
         break;
       default:
-        filterColor: 'hue-rotate(0)';
+        filterColor = 'hue-rotate(0)';
         break;
     }
     this.document.documentElement.style.setProperty('--filter', filterColor); //set dynamic filter here
