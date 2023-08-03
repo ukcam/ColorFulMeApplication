@@ -28,10 +28,10 @@ export class CameraScreenPage implements OnInit {
   async ngOnInit() {
     this.classValue = this.route.snapshot.params['condition']
     switch (this.classValue) {
-      case 'imageNormal' : this.currentFilter = "Normal"; break;
-      case 'imageRedGreen' : this.currentFilter = "Red Green"; break;
-      case 'imageDeuteranopia' : this.currentFilter = "Deuteranopia"; break;
-      case 'imageProtanopia' : this.currentFilter = "Protanopia"; break;
+      case 'imageNormal': this.currentFilter = "Normal"; break;
+      case 'imageRedGreen': this.currentFilter = "Red Green"; break;
+      case 'imageDeuteranopia': this.currentFilter = "Deuteranopia"; break;
+      case 'imageProtanopia': this.currentFilter = "Protanopia"; break;
       default: this.currentFilter = "Normal"; break;
     }
     await this.photoService.loadSaved();
@@ -58,7 +58,7 @@ export class CameraScreenPage implements OnInit {
   }
 
   openAssessment() {
-    this.router.navigate(['assessment', this.classValue]);
+    this.router.navigate(['assessment']);
   }
 
   public async showActionSheetFilter() {
