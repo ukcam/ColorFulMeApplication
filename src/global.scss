@@ -30,5 +30,5 @@ pwa-action-sheet,
 pwa-toast,
 pwa-camera,
 pwa-camera-modal-instance {
-  filter: hue-rotate(10deg) saturate(4) !important; //Must be dynamic value
+  filter: var(--filter) !important;
 }

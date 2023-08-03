@@ -1,5 +1,10 @@
 import { Directive, ElementRef, Injectable, Renderer2 } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import {
+  Camera,
+  CameraResultType,
+  CameraSource,
+  Photo,
+} from '@capacitor/camera';
 import { Capacitor } from '@capacitor/core';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
@@ -7,18 +12,23 @@ import { Platform } from '@ionic/angular';
 import { CapturedPhoto } from './interfaces/user-photo.interface';
 import { Router } from '@angular/router';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
-@Directive({ 'selector': 'ion-img' })
+@Directive({ selector: 'ion-img' })
 export class PhotoService {
+  public document = document;
+  public pwa = document.getElementsByClassName('pwa-camera-modal-instance');
   public photos: CapturedPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
-  checkBoxed = "true"
+  checkBoxed = 'true';
 
-  constructor(private platform: Platform, private el: ElementRef, private renderer: Renderer2, private router: Router) { }
+  constructor(
+    private platform: Platform,
+    private el: ElementRef,
+    private renderer: Renderer2,
+    private router: Router
+  ) {}
 
   public async loadSaved() {
     const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
@@ -35,11 +45,16 @@ export class PhotoService {
   }
 
   public async addNewToGallery(filter: any) {
+    this.document.documentElement.style.setProperty(
+      '--filter',
+      'hue-rotate(10deg) saturate(4)'
+    ); //set dynamic filter here
+
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
-      allowEditing: true
+      allowEditing: true,
     });
 
     const savedImageFile = await this.savePicture(capturedPhoto, filter);
@@ -65,13 +80,13 @@ export class PhotoService {
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
-        filter
+        filter,
       };
     } else {
       return {
         filepath: fileName,
         webviewPath: photo.webPath,
-        filter
+        filter,
       };
     }
   }
@@ -112,9 +127,9 @@ export class PhotoService {
       };
       reader.readAsDataURL(blob);
     });
-  
-  originalUrl = this.router.url
-  newOriginalUrl = this.originalUrl.replace("/camera/", "")
+
+  originalUrl = this.router.url;
+  newOriginalUrl = this.originalUrl.replace('/camera/', '');
 
   public async loadpictures(value: string) {
     /*if (isTrue) {
@@ -131,12 +146,22 @@ export class PhotoService {
       this.checkBoxed = "false"
       this.router.navigate(['camera', 'imageNormal']);
     }*/
-    switch (value){
-      case 'imageNormal': this.router.navigate(['camera', 'imageNormal']); break
-      case 'imageProtanopia': this.router.navigate(['camera', 'imageProtanopia']); break
-      case 'imageRedGreen': this.router.navigate(['camera', 'imageRedGreen']); break
-      case 'imageDeuteranopia': this.router.navigate(['camera', 'imageDeuteranopia']); break
-      default: this.router.navigate(['camera', 'imageNormal']); break
+    switch (value) {
+      case 'imageNormal':
+        this.router.navigate(['camera', 'imageNormal']);
+        break;
+      case 'imageProtanopia':
+        this.router.navigate(['camera', 'imageProtanopia']);
+        break;
+      case 'imageRedGreen':
+        this.router.navigate(['camera', 'imageRedGreen']);
+        break;
+      case 'imageDeuteranopia':
+        this.router.navigate(['camera', 'imageDeuteranopia']);
+        break;
+      default:
+        this.router.navigate(['camera', 'imageNormal']);
+        break;
     }
   }
 }
