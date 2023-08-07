@@ -1,0 +1,27 @@
+// ion-content ion-toolbar {
+//   --background: translucent;
+// }
+
+ion-footer {
+  text-align: center;
+}
+
+.imageNormal {
+  filter: hue-rotate(0);
+}
+
+.imageProtanopia {
+  filter: hue-rotate(10deg);
+}
+
+.imageTritanopia {
+  filter: hue-rotate(90deg);
+}
+
+.imageDeuteranopia {
+  filter: contrast(200%);
+}
+
+.imageRedGreen {
+  filter: saturate(4)
+}

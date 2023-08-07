@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { ChildrenOutletContexts } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -9,5 +9,8 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private contexts: ChildrenOutletContexts) { }
 }
+
+
+
