@@ -18,19 +18,19 @@ import { PhotoService } from 'src/app/services/photo.service';
 export class AssessmentScreenPage implements OnInit {
   plate1!: string;
   plate2!: string;
-  plate3!: string;
+  //plate3!: string;
   plate4!: string;
-  plate5!: string;
-  plate6!: string;
-  plate7!: string;
+  //plate5!: string;
+  //plate6!: string;
+  //plate7!: string;
   plate8!: string;
-  plate9!: string;
+  //plate9!: string;
   plate10!: string;
-  plate11!: string;
-  plate12!: string;
-  plate13!: string;
+  //plate11!: string;
+  //plate12!: string;
+  //plate13!: string;
   plate16!: string;
-  plate17!: string;
+  //plate17!: string;
 
   deuteran = 0
   protan = 0
@@ -45,19 +45,19 @@ export class AssessmentScreenPage implements OnInit {
   imageContainer = [
     "plate1",
     "plate2",
-    "plate3",
+    //"plate3",
     "plate4",
-    "plate5",
-    "plate6",
-    "plate7",
+    // "plate5",
+    // "plate6",
+    // "plate7",
     "plate8",
-    "plate9",
+    //"plate9",
     "plate10",
-    "plate11",
-    "plate12",
-    "plate13",
+    // "plate11",
+    // "plate12",
+    // "plate13",
     "plate16",
-    "plate17",
+    //"plate17",
   ]
 
   x = 0
@@ -65,19 +65,19 @@ export class AssessmentScreenPage implements OnInit {
   imageContainerModel = [
     this.plate1,
     this.plate2,
-    this.plate3,
+    //this.plate3,
     this.plate4,
-    this.plate5,
-    this.plate6,
-    this.plate7,
+    // this.plate5,
+    // this.plate6,
+    // this.plate7,
     this.plate8,
-    this.plate9,
+    //this.plate9,
     this.plate10,
-    this.plate11,
-    this.plate12,
-    this.plate13,
+    // this.plate11,
+    // this.plate12,
+    // this.plate13,
     this.plate16,
-    this.plate17,
+    //this.plate17,
   ]
 
   constructor(
@@ -100,88 +100,98 @@ export class AssessmentScreenPage implements OnInit {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.imageContainerModel[2] === "29") {
+    // if (this.imageContainerModel[2] === "29") {
+    //   this.total = this.total + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
+
+    if (this.imageContainerModel[2] === "5") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.imageContainerModel[3] === "5") {
+    // if (this.imageContainerModel[4] === "3") {
+    //   this.total = this.total + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
+
+    // if (this.imageContainerModel[5] === "15") {
+    //   this.total = this.total + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
+
+    // if (this.imageContainerModel[6] === "74") {
+    //   this.total = this.total + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
+
+    if (this.imageContainerModel[3] === "6") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.imageContainerModel[4] === "3") {
+    // if (this.imageContainerModel[8] === "45") {
+    //   this.total = this.total + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
+
+    if (this.imageContainerModel[4] === "5") {
       this.total = this.total + 1
     } else {
       this.redGreen = this.redGreen + 1
     }
 
-    if (this.imageContainerModel[5] === "15") {
-      this.total = this.total + 1
-    } else {
-      this.redGreen = this.redGreen + 1
-    }
+    // if (this.imageContainerModel[10] === "7") {
+    //   this.total = this.total + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
 
-    if (this.imageContainerModel[6] === "74") {
-      this.total = this.total + 1
-    } else {
-      this.redGreen = this.redGreen + 1
-    }
-    if (this.imageContainerModel[7] === "6") {
-      this.total = this.total + 1
-    } else {
-      this.redGreen = this.redGreen + 1
-    }
+    // if (this.imageContainerModel[11] === "16") {
+    //   this.total = this.total + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
 
-    if (this.imageContainerModel[8] === "45") {
-      this.total = this.total + 1
-    } else {
-      this.redGreen = this.redGreen + 1
-    }
+    // if (this.imageContainerModel[12] === "73") {
+    //   this.total = this.total + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
 
-    if (this.imageContainerModel[9] === "5") {
+    if (this.imageContainerModel[5] === "26") {
       this.total = this.total + 1
-    } else {
+    } else if (this.imageContainerModel[5] === "6") {
       this.redGreen = this.redGreen + 1
-    }
-
-    if (this.imageContainerModel[10] === "7") {
-      this.total = this.total + 1
-    } else {
-      this.redGreen = this.redGreen + 1
-    }
-
-    if (this.imageContainerModel[11] === "16") {
-      this.total = this.total + 1
-    } else {
-      this.redGreen = this.redGreen + 1
-    }
-
-    if (this.imageContainerModel[12] === "73") {
-      this.total = this.total + 1
-    } else {
-      this.redGreen = this.redGreen + 1
-    }
-
-    if (this.imageContainerModel[13] === "26") {
-      this.total = this.total + 1
-    } else if (this.imageContainerModel[13] === "6") {
       this.protan = this.protan + 1
-    } else if (this.imageContainerModel[13] === "2") {
+    } else if (this.imageContainerModel[5] === "2") {
+      this.redGreen = this.redGreen + 1
       this.deuteran = this.deuteran + 1
+    } else {
+      this.redGreen = this.redGreen + 1
     }
 
-    if (this.imageContainerModel[14] === "42") {
-      this.total = this.total + 1
-    } else if (this.imageContainerModel[14] === "2") {
-      this.protan = this.protan + 1
-    } else if (this.imageContainerModel[14] === "4") {
-      this.deuteran = this.deuteran + 1
-    }
+    // if (this.imageContainerModel[14] === "42") {
+    //   this.total = this.total + 1
+    // } else if (this.imageContainerModel[14] === "2") {
+    //   this.redGreen = this.redGreen + 1
+    //   this.protan = this.protan + 1
+    // } else if (this.imageContainerModel[14] === "4") {
+    //   this.redGreen = this.redGreen + 1
+    //   this.deuteran = this.deuteran + 1
+    // } else {
+    //   this.redGreen = this.redGreen + 1
+    // }
 
-    if (this.redGreen == 13 && this.protan == 0 && this.deuteran == 0) {
+
+    if (this.redGreen == 6 && this.protan == 0 && this.deuteran == 0) {
       this.resultString = "You have a rare case of achromatopsia, you should see a doctor and get your eyes checked"
       this.condition = "imageNormal"
     } else if (this.protan > 0 && this.redGreen > 0) {
@@ -190,7 +200,7 @@ export class AssessmentScreenPage implements OnInit {
     } else if (this.deuteran > 0 && this.redGreen > 0) {
       this.resultString = "You are part of the 1% of males and 0.35% of females globally that has Deuteranopia"
       this.condition = "imageDeuteranopia"
-    } else if (this.redGreen > 0) {
+    } else if (this.redGreen > 2) {
       this.resultString = "You are part of the 5–8% of males and 0.5–1% of females globally that has red-green deficiency"
       this.condition = "imageRedGreen"
     } else {
@@ -221,15 +231,29 @@ export class AssessmentScreenPage implements OnInit {
     this.router.navigate(['camera', this.condition]);
   }
 
+  retakeAssessment() {
+    window.location.reload();
+  }
+
   nextImage() {
-    if (this.x < 14) {
+    if (this.x < 5) {
       this.x++
+    } else {
+      this.setOpen(true)
     }
   }
 
   prevImage() {
     if (this.x !== 0) {
       this.x--
+    }
+  }
+
+  buttonLabel() {
+    if (this.x === 5){
+      return 'View Result'
+    } else {
+      return 'Submit'
     }
   }
 }

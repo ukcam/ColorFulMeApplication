@@ -25,7 +25,7 @@
     <ion-card>
       <p align="center">
         <ion-text>
-          <h3>{{x+1}} of 15</h3>
+          <h3>{{x+1}} of 6</h3>
         </ion-text>
         <img height="200 px" width="200 px" src="/assets/ishihara-images/{{imageContainer[x]}}.png" />
         <ion-card-header>
@@ -34,7 +34,7 @@
               <ion-textarea placeholder="Enter The Number" [(ngModel)]=imageContainerModel[x]></ion-textarea>
             </ion-item>
             <ion-button [disabled]="x === 0? true : false" (click)="prevImage()">Previous</ion-button>
-            <ion-button (click)="nextImage()">Submit</ion-button>
+            <ion-button (click)="nextImage()">{{buttonLabel()}}</ion-button>
           </ion-list>
         </ion-card-header>
         <!--<img height="200 px" width="200 px" src="/assets/ishihara-images/plate1.png" />
@@ -157,7 +157,7 @@
             </ion-item>
           </ion-list>
         </ion-card-header>-->
-        <ion-button  [disabled]="x === 14? false : true" (click)="setOpen(true)">Assess</ion-button>
+        <!--ion-button  [disabled]="x === 14? false : true" (click)="setOpen(true)">View Result</ion-button-->
       </p>
     </ion-card>
     <ion-modal [isOpen]="isModalOpen">
@@ -172,8 +172,10 @@
         </ion-header>
         <ion-content class="ion-padding">
           <p>
-            {{resultString }}<br>
+            {{total}} out of 6 answered correctly<br>
+            {{resultString}}<br>
           </p>
+          <ion-button (click)="retakeAssessment()">Retake Assessment</ion-button>
           <ion-button (click)="openCam()">Open Camera</ion-button>
         </ion-content>
       </ng-template>

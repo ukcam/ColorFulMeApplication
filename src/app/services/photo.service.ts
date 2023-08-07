@@ -51,13 +51,13 @@ export class PhotoService {
         filterColor = 'hue-rotate(0)';
         break;
       case 'imageProtanopia':
-        filterColor = 'hue-rotate(10deg)';
+        filterColor = 'hue-rotate(10deg) saturate(4)';
         break;
       case 'imageTritanopia':
         filterColor = 'hue-rotate(90deg)';
         break;
       case 'imageDeuteranopia':
-        filterColor = 'contrast(200%)';
+        filterColor = 'contrast(200%) saturate(4)';
         break;
       case 'imageRedGreen':
         filterColor = 'saturate(4)';
