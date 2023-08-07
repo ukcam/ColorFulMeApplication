@@ -23,6 +23,14 @@
     "@angular-devkit/core" "16.1.4"
     "rxjs" "7.8.1"
 
+"@angular-devkit/architect@0.1601.8":
+  "integrity" "sha512-kOXVGwsQnZvtz2UZNefcEy64Jiwq0eSoQUeozvDXOaYRJABLjPKI2YaarvKC9/Z1SGLuje0o/eRJO4T8aRk9rQ=="
+  "resolved" "https://registry.npmjs.org/@angular-devkit/architect/-/architect-0.1601.8.tgz"
+  "version" "0.1601.8"
+  dependencies:
+    "@angular-devkit/core" "16.1.8"
+    "rxjs" "7.8.1"
+
 "@angular-devkit/build-angular@^16.0.0":
   "integrity" "sha512-LiHM7R20fTHg/eM+Iabotj08edP5wVBQahRfVNLxERo8X6VJgSjVChnsh3AQJkRywlGuFe20AOQYpyLyN367Ug=="
   "resolved" "https://registry.npmjs.org/@angular-devkit/build-angular/-/build-angular-16.1.4.tgz"
@@ -125,6 +133,17 @@
     "rxjs" "7.8.1"
     "source-map" "0.7.4"
 
+"@angular-devkit/core@16.1.8":
+  "integrity" "sha512-dSRD/+bGanArIXkj+kaU1kDFleZeQMzmBiOXX+pK0Ah9/0Yn1VmY3RZh1zcX9vgIQXV+t7UPrTpOjaERMUtVGw=="
+  "resolved" "https://registry.npmjs.org/@angular-devkit/core/-/core-16.1.8.tgz"
+  "version" "16.1.8"
+  dependencies:
+    "ajv" "8.12.0"
+    "ajv-formats" "2.1.1"
+    "jsonc-parser" "3.2.0"
+    "rxjs" "7.8.1"
+    "source-map" "0.7.4"
+
 "@angular-devkit/schematics@^15.0.0", "@angular-devkit/schematics@15.2.9":
   "integrity" "sha512-o08nE8sTpfq/Fknrr1rzBsM8vY36BDox+8dOo9Zc/KqcVPwDy94YKRzHb+xxVaU9jy1VYeCjy63mkyELy7Z3zQ=="
   "resolved" "https://registry.npmjs.org/@angular-devkit/schematics/-/schematics-15.2.9.tgz"
@@ -136,12 +155,12 @@
     "ora" "5.4.1"
     "rxjs" "6.6.7"
 
-"@angular-devkit/schematics@16.1.4":
-  "integrity" "sha512-yjRgwHAfFaeuimgbQtjwSUyXzEHpMSdTRb2zg+TOp6skoGvHOG8xXFJ7DjBkSMeAQdFF0fkxhPS9YmlxqNc+7A=="
-  "resolved" "https://registry.npmjs.org/@angular-devkit/schematics/-/schematics-16.1.4.tgz"
-  "version" "16.1.4"
+"@angular-devkit/schematics@16.1.8":
+  "integrity" "sha512-6LyzMdFJs337RTxxkI2U1Ndw0CW5mMX/aXWl8d7cW2odiSrAg8IdlMqpc+AM8+CPfsB0FtS1aWkEZqJLT0jHOg=="
+  "resolved" "https://registry.npmjs.org/@angular-devkit/schematics/-/schematics-16.1.8.tgz"
+  "version" "16.1.8"
   dependencies:
-    "@angular-devkit/core" "16.1.4"
+    "@angular-devkit/core" "16.1.8"
     "jsonc-parser" "3.2.0"
     "magic-string" "0.30.0"
     "ora" "5.4.1"
@@ -216,15 +235,15 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/cli@^16.0.0", "@angular/cli@>= 16.0.0 < 17.0.0":
-  "integrity" "sha512-coSOLVLpOCOD5q9K9EAFFMrTES+HtdJiLy/iI9kdKNCKWUJpm8/svZ3JZOej3vPxYEp0AokXNOwORQnX21/qZQ=="
-  "resolved" "https://registry.npmjs.org/@angular/cli/-/cli-16.1.4.tgz"
-  "version" "16.1.4"
+"@angular/cli@^16.1.8", "@angular/cli@>= 16.0.0 < 17.0.0":
+  "integrity" "sha512-amOIHMq8EvixhnI+do5Bcy6IZSFAJx0njhhLM4ltDuNUczH8VH0hNegZKxhb8K87AMO8jITFM+NLrzccyghsDQ=="
+  "resolved" "https://registry.npmjs.org/@angular/cli/-/cli-16.1.8.tgz"
+  "version" "16.1.8"
   dependencies:
-    "@angular-devkit/architect" "0.1601.4"
-    "@angular-devkit/core" "16.1.4"
-    "@angular-devkit/schematics" "16.1.4"
-    "@schematics/angular" "16.1.4"
+    "@angular-devkit/architect" "0.1601.8"
+    "@angular-devkit/core" "16.1.8"
+    "@angular-devkit/schematics" "16.1.8"
+    "@schematics/angular" "16.1.8"
     "@yarnpkg/lockfile" "1.1.0"
     "ansi-colors" "4.1.3"
     "ini" "4.1.1"
@@ -1282,7 +1301,7 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     "to-fast-properties" "^2.0.0"
 
-"@capacitor/android@5.1.1":
+"@capacitor/android@^5.1.1":
   "integrity" "sha512-FaDg+Igjiz6ohH7yu5TpLHGCQbsjMMy+0a+idsyadTnz/IzRZwqlCyj4Jbqsb5J39j0hE8kqD3o1e5O5Ukbm2g=="
   "resolved" "https://registry.npmjs.org/@capacitor/android/-/android-5.1.1.tgz"
   "version" "5.1.1"
@@ -1739,13 +1758,13 @@
     "@angular-devkit/schematics" "15.2.9"
     "jsonc-parser" "3.2.0"
 
-"@schematics/angular@16.1.4":
-  "integrity" "sha512-XfoeL+aBVIR/DzgVKGVhHW/TGQnqWvngyJVuCwXEVWzNfjxHYFkchXa78OItpAvTEr6/Y0Me9FQVAGVA4mMUyg=="
-  "resolved" "https://registry.npmjs.org/@schematics/angular/-/angular-16.1.4.tgz"
-  "version" "16.1.4"
+"@schematics/angular@16.1.8":
+  "integrity" "sha512-gTHy1A/E9BCr0sj3VCr6eBYkgVkO96QWiZcFumedGnvstvp5wiCoIoJPLLfYaxVt1vt08xmnmS3OZ3r0qCLdpA=="
+  "resolved" "https://registry.npmjs.org/@schematics/angular/-/angular-16.1.8.tgz"
+  "version" "16.1.8"
   dependencies:
-    "@angular-devkit/core" "16.1.4"
-    "@angular-devkit/schematics" "16.1.4"
+    "@angular-devkit/core" "16.1.8"
+    "@angular-devkit/schematics" "16.1.8"
     "jsonc-parser" "3.2.0"
 
 "@sigstore/protobuf-specs@^0.1.0":
